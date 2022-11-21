@@ -38,8 +38,6 @@ patches:
       base_path: "source_subfolder"
     - patch_file: "patches/0010-duplicate-hash.patch"
       base_path: "source_subfolder"
-    - patch_file: "patches/0011-disable-logger-example.patch"
-      base_path: "source_subfolder"
     - patch_file: "patches/0012-compiler-flags.patch"
       base_path: "source_subfolder"
     - patch_file: "patches/0014-find-librt.patch"
@@ -59,6 +57,8 @@ patches:
       base_path: "source_subfolder"
   "2022.10.03.00":
     - patch_file: "patches/0017-compiler-flags.patch"
+      base_path: "source_subfolder"
+    - patch_file: "patches/0019-exclude-example.patch"
       base_path: "source_subfolder"
     - patch_file: "patches/0023-find-packages.patch"
       base_path: "source_subfolder"

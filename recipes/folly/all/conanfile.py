@@ -18,7 +18,7 @@ class FollyConan(ConanFile):
     url = "https://github.com/conan-io/conan-center-index"
     homepage = "https://github.com/facebook/folly"
     license = "Apache-2.0"
-
+    version='2022.10.03.00'
     settings = "os", "arch", "compiler", "build_type"
     options = {
         "shared": [True, False],
@@ -82,6 +82,7 @@ class FollyConan(ConanFile):
             self.requires("libdwarf/20191104")
         self.requires("libsodium/1.0.18")
         self.requires("xz_utils/5.2.5")
+        self.requires("fmt/9.1.0")
         # FIXME: Causing compilation issues on clang: self.requires("jemalloc/5.2.1")
         if self.settings.os == "Linux":
             self.requires("libiberty/9.1.0")
@@ -196,9 +197,6 @@ class FollyConan(ConanFile):
             if self.settings.os == "Linux":
                 self.cpp_info.components["libfolly"].libs = [
                     "folly_exception_counter",
-                    "folly_exception_tracer",
-                    "folly_exception_tracer_base",
-                    "folly_test_util",
                     "follybenchmark",
                     "folly"
                 ]
